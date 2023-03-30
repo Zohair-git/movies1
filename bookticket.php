@@ -44,34 +44,69 @@ session_start();
     ?>
 <!DOCTYPE html>
 <html lang="en">
-<head></head>
-    <title>Book a ticket</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+<link href="css/tablestyling.css" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/flaticon.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/odometer.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="assets/css/nice-select.css">
+    <link rel="stylesheet" href="assets/css/jquery.animatedheadline.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <title>Document</title>
 </head>
 <body>
+      
+
+
+<div class="overlay"></div>
+    <a href="#0" class="scrollToTop">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <?php include('navbar.php');?>
+    <br><br> <br>
+
+
     <?php while($fetching = mysqli_fetch_array($select_bookticket_run)) {?>
     <br>
-    <h2 class="text-center">Tickets for <?php echo $fetching['title'] ?></h2>
-    <br>
+
+    <div class="banner-content">
+                <h1 class="title  cd-headline clip"><span class="d-block">book your</span> tickets for 
+                    <span class="color-theme cd-words-wrapper p-0 m-0">
+                        <b class="is-visible"><?php echo $fetching['title'] ?></b>
+                    
+                    </span>
+                </h1>
+                <p>Safe, secure, reliable ticketing.Your ticket to live entertainment!</p>
+            </div>
+<br><br>
+
+
     
     <div class="container">
 <form  method="post">
   <div class="mb-3">
     <label  class="form-label">Name</label>
-    <input type="text" name="name" class="form-control"  >
-    </div>
+    <input type="text" name="name" class="form-control bg-transparent" style="border:0px; border-bottom:2px solid white;" placeholder="Enter Your Name" >
+    </div><br>
   <div class="mb-3">
     <label  class="form-label">Email</label>
-    <input type="email" name="email" class="form-control" >
-  </div>
+    <input type="email" name="email" class="form-control bg-transparent" style="border:0px; border-bottom:2px solid white;"  placeholder="Enter Your Email">
+  </div><br>
   <div class="mb-3">
     <label  class="form-label">Total Members</label>
-    <input type="number" name="Adults" placeholder="Adults" class="form-control mb-2" >
-    <input type="number" name="Childrens" placeholder="Childrens" class="form-control" >
-  </div>
+    <input type="number" name="Adults" placeholder="Adults" class="form-control mb-2 bg-transparent" style="border:0px; border-bottom:2px solid white;" >
+    <input type="number" name="Childrens" placeholder="Childrens" class="form-control bg-transparent" style="border:0px; border-bottom:2px solid white;" >
+  </div><br>
   <div class="mb-3">
   <label  class="form-label">Ticket Class</label>
-  <select name="select_name"class="form-control" id="">
+  <select name="select_name"class="form-control bg-transparent" id="" style="border:0px; border-bottom:2px solid white;">
     <option value="Golden Class" >Gold seats 2500RS</option>
     <option value="Plat Class">Plat seats 3000RS</option>
 
@@ -84,10 +119,35 @@ session_start();
    
   </div>
 
-  <input type="submit" name="submit_ticket" value="Book a ticket" class="btn btn-primary">
+  
+  <div class="row">
+    <div class="col-lg-2">
+    <input type="submit" name="submit_ticket" value="Book a ticket" class="btn btn-primary">
+  
+    </div>
+    <div class="col-lg-4">
+    <button type="submit" class="btn btn-dark" name="submit">BACK TO HOME</button>
+    </div>
+    </div>
+
   <?php }?>
 </form>
 
 </div>
+<br><br><br><br>
+<script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/modernizr-3.6.0.min.js"></script>
+    <script src="assets/js/plugins.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/heandline.js"></script>
+    <script src="assets/js/isotope.pkgd.min.js"></script>
+    <script src="assets/js/magnific-popup.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/countdown.min.js"></script>
+    <script src="assets/js/odometer.min.js"></script>
+    <script src="assets/js/viewport.jquery.js"></script>
+    <script src="assets/js/nice-select.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>

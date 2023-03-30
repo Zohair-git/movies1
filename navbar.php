@@ -82,7 +82,13 @@
                     <a href="logout.php">Logout</a>
                            
                     </li>
-
+                    <div class="row align-items-center mx-4">
+                            <?php $name = $_SESSION["name"];
+                                $pfp = $_SESSION["pfp"];
+                            ?>
+                            <div class="col-lg-8"><p><?php echo $name?></p></div>
+                            <div class="col-lg-4"><img src="<?php echo $pfp?>" style="border-radius: 20px;"  width="60" height="60"></div>
+                        </div>  
                 </ul>
                 <div class="header-bar d-lg-none">
 					<span></span>

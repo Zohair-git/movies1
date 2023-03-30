@@ -7,13 +7,17 @@ if(isset($_POST["submitbtn"])){
     $email = $_POST['email'];
     $password = $_POST['pass'];
     $rep_password = $_POST['rep_pass'];
+    $file_name = $_FILES['pfp']['name'];
+    $tmp_name = $_FILES['pfp']['tmp_name'];
+    $pfp = './images/'. $file_name;
+    move_uploaded_file($tmp_name,$pfp);
     $query = mysqli_query($conn , "SELECT * FROM `tbl_accounts` WHERE uname = '$name' OR email = '$email'");
     if(mysqli_num_rows($query) > 0){
         echo "<script> alert('Username or Email has already been taken')</script>";
     }
     else{
         if($password == $rep_password){
-            $queryinsert = "INSERT INTO `tbl_accounts` ( `uname`, `lastname`, `email`, `password`) VALUES ('$name','$lname','$email','$password')";
+            $queryinsert = "INSERT INTO `tbl_accounts` ( `uname`, `lastname`, `email`, `password`,`pfp`) VALUES ('$name','$lname','$email','$password','$pfp')";
             $query = mysqli_query($conn , $queryinsert);
             echo "<script> alert('Registration Successful')</script>";
             if($query){
@@ -75,7 +79,7 @@ if(isset($_POST["submitbtn"])){
                         <span class="cate">welcome</span>
                         <h2 class="title">to Boleto </h2>
                     </div>
-                    <form class="account-form" method="post">
+                    <form class="account-form" method="post" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="email1">Firstname<span>*</span></label>
                             <input type="text" name="Name" placeholder="Enter Your FirstName" id="email1" required>
@@ -95,6 +99,10 @@ if(isset($_POST["submitbtn"])){
                         <div class="form-group">
                             <label for="pass2">Confirm Password<span>*</span></label>
                             <input type="password" name="rep_pass" placeholder="Password" id="pass2" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="pass2">Upload your profile picture<span>*</span></label>
+                            <input type="file" name="pfp" id="pass2" required>
                         </div>
                      <div class="form-group text-center">
                             <input type="submit" name="submitbtn" value="Sign Up">

@@ -135,7 +135,12 @@ $run = mysqli_query($conn, $select_query);
                                                                             $total_amount2 = $child_discount2 + $plat_tt4;
                                                                             echo 'Rs ' .  $total_amount2;
                                                                         } ?>
-                    </span></h6>
+                    </span></h6> 
+                    <?php
+                    
+                    // if ( st$row['movie_date'] >  ) {
+                    //     # code...
+                    // }  ?>
                 <a href="#0" class="custom-button back-button">proceed</a>
             </div>
         </div>

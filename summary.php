@@ -49,8 +49,6 @@ $run = mysqli_query($conn, $select_query);
 
 
 
-
-hello
     <div>
     <?php while ($row = mysqli_fetch_array($run)) { ?>
 

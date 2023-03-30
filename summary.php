@@ -137,11 +137,14 @@ $run = mysqli_query($conn, $select_query);
                                                                         } ?>
                     </span></h6> 
                     <?php
-                    
-                    // if ( st$row['movie_date'] >  ) {
-                    //     # code...
-                    // }  ?>
-                <a href="#0" class="custom-button back-button">proceed</a>
+                    $date_now = date("Y-m-d");
+                    $move_date =$row['movie_date'];
+                    if ( strtotime($date_now) < strtotime($move_date)  ) {?>
+                       <a href="#0" class="custom-button back-button">proceed</a>
+                 <?php   } else{
+                    echo "This ticket is expire";
+                 } ?>
+                
             </div>
         </div>
 

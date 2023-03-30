@@ -6,7 +6,7 @@ session_start();
         $id = $_POST['hidden_id1'];
         $select_bookticket ="SELECT * FROM `tbl_addmovies` WHERE id = '$id'";
         $select_bookticket_run = mysqli_query($conn,$select_bookticket);
-      }
+      } 
       else{
         header('location:login.php');
       }

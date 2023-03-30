@@ -117,16 +117,16 @@ session_start();
 
   
    
-  </div>
+  </div><br>
 
   
   <div class="row">
-    <div class="col-lg-2">
-    <input type="submit" name="submit_ticket" value="Book a ticket" class="btn btn-primary">
+    <div class="form-group col-lg-3">
+    <input type="submit" name="submit_ticket" value="Book a ticket" >
   
     </div>
-    <div class="col-lg-4">
-    <button type="submit" class="btn btn-dark" name="submit">BACK TO HOME</button>
+    <div class="form-group col-lg-6">
+    <input type="submit"  name="submit" value="BACK TO HOME">
     </div>
     </div>
 

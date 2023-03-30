@@ -90,7 +90,7 @@ if(isset($_POST["submitbtn"])){
                             <input type="text" name="lastname" placeholder="Enter Your LastName" id="email1" required>
                         </div><br>
                         <div class="form-group">
-                            <label for="pass1">email</label>
+                            <label for="pass1">Email</label>
                             <input type="text" name="email" placeholder="Email" id="email1" required>
                         </div><br>
                             </div><br><br>

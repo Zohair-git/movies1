@@ -36,11 +36,9 @@ if(isset($_POST["submitbtn"])){
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+<link href="css/tablestyling.css" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/all.min.css">
     <link rel="stylesheet" href="assets/css/animate.css">
     <link rel="stylesheet" href="assets/css/flaticon.css">
@@ -49,13 +47,9 @@ if(isset($_POST["submitbtn"])){
     <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
     <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
     <link rel="stylesheet" href="assets/css/nice-select.css">
+    <link rel="stylesheet" href="assets/css/jquery.animatedheadline.css">
     <link rel="stylesheet" href="assets/css/main.css">
-
-    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
-
-    <title>Boleto  - Online Ticket Booking Website HTML Template</title>
-
-
+    <title>Document</title>
 </head>
 
 <body>
@@ -74,36 +68,49 @@ if(isset($_POST["submitbtn"])){
     <section class="account-section bg_img" data-background="./assets/images/account/account-bg.jpg">
         <div class="container">
             <div class="padding-top padding-bottom">
-                <div class="account-area">
-                    <div class="section-header-3">
-                        <span class="cate">welcome</span>
-                        <h2 class="title">to Boleto </h2>
-                    </div>
+                <div class=" account-area" >
+                <div class="banner-content">
+                <h1 class="title  cd-headline clip"><span class="d-block"></span> Sign
+                    <span class="color-theme cd-words-wrapper p-0 m-0">
+                        <b class="is-visible"> Up</b>
+                    
+                    </span>
+                </h1>
+            </div>
+<br><br>
                     <form class="account-form" method="post" enctype="multipart/form-data">
-                        <div class="form-group">
-                            <label for="email1">Firstname<span>*</span></label>
+                        <div class="row">
+                            <div class="col">
+                            <div class="form-group">
+                            <label for="email1">Firstname</label>
                             <input type="text" name="Name" placeholder="Enter Your FirstName" id="email1" required>
-                        </div>
+                        </div><br>
                         <div class="form-group">
-                            <label for="email1">Lastname<span>*</span></label>
+                            <label for="email1">Lastname</label>
                             <input type="text" name="lastname" placeholder="Enter Your LastName" id="email1" required>
-                        </div>
+                        </div><br>
                         <div class="form-group">
-                            <label for="pass1">email<span>*</span></label>
-                            <input type="text" name="email" placeholder="email" id="email1" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="pass1">Password<span>*</span></label>
+                            <label for="pass1">email</label>
+                            <input type="text" name="email" placeholder="Email" id="email1" required>
+                        </div><br>
+                            </div><br><br>
+                            <div class="col">
+                            <div class="form-group">
+                            <label for="pass1">Password</label>
                             <input type="password" name="pass" placeholder="Password" id="pass1" required>
-                        </div>
+                        </div><br>
                         <div class="form-group">
-                            <label for="pass2">Confirm Password<span>*</span></label>
-                            <input type="password" name="rep_pass" placeholder="Password" id="pass2" required>
-                        </div>
+                            <label for="pass2">Confirm Password</label>
+                            <input type="password" name="rep_pass" placeholder="Confirm Password" id="pass2" required>
+                        </div><br>
                         <div class="form-group">
-                            <label for="pass2">Upload your profile picture<span>*</span></label>
-                            <input type="file" name="pfp" id="pass2" required>
+                            <label for="pass2">Upload your profile picture</label>
+                            <input type="file" name="pfp" id="pass2" required class="bg-transparent">
+                        </div><br>
+                            </div>
                         </div>
+
+
                      <div class="form-group text-center">
                             <input type="submit" name="submitbtn" value="Sign Up">
                         </div>
@@ -135,11 +142,11 @@ if(isset($_POST["submitbtn"])){
     </section>
     <!-- ==========Sign-In-Section========== -->
 
-
     <script src="assets/js/jquery-3.3.1.min.js"></script>
     <script src="assets/js/modernizr-3.6.0.min.js"></script>
     <script src="assets/js/plugins.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/heandline.js"></script>
     <script src="assets/js/isotope.pkgd.min.js"></script>
     <script src="assets/js/magnific-popup.min.js"></script>
     <script src="assets/js/owl.carousel.min.js"></script>

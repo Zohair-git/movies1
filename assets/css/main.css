@@ -7457,8 +7457,8 @@ input[type="submit"] {
 
 /*Account-Section Starts Here*/
 .account-area {
-  width: 100%;
-  max-width: 540px;
+ 
+  
   padding: 60px 45px;
   margin: 0 auto;
   background-color: rgba(68, 90, 153, 0.051);

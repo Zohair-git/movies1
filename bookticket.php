@@ -95,10 +95,10 @@ session_start();
     <label  class="form-label">Name</label>
     <input type="text" name="name" class="form-control bg-transparent" style="border:0px; border-bottom:2px solid white;" placeholder="Enter Your Name" >
     </div><br>
-  <div class="mb-3">
+  <!-- <div class="mb-3">
     <label  class="form-label">Email</label>
     <input type="email" name="email" class="form-control bg-transparent" style="border:0px; border-bottom:2px solid white;"  placeholder="Enter Your Email">
-  </div><br>
+  </div><br> -->
   <div class="mb-3">
     <label  class="form-label">Total Members</label>
     <input type="number" name="Adults" placeholder="Adults" class="form-control mb-2 bg-transparent" style="border:0px; border-bottom:2px solid white;" >

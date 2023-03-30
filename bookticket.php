@@ -1,19 +1,16 @@
 <?php 
 session_start();
-
-    include('connection.php');
-    
-    if(isset($_POST['bookticket_button'])){
-      $id = $_POST['hidden_id1'];
-      $select_bookticket ="SELECT * FROM `tbl_addmovies` WHERE id = '$id'";
-
-      $select_bookticket_run = mysqli_query($conn,$select_bookticket);
-      if($select_bookticket_run){
-    
-        
-       
+  include('connection.php');
+     if(isset($_POST['bookticket_button'])){
+      if(isset($_SESSION['check'])){
+        $id = $_POST['hidden_id1'];
+        $select_bookticket ="SELECT * FROM `tbl_addmovies` WHERE id = '$id'";
+        $select_bookticket_run = mysqli_query($conn,$select_bookticket);
       }
-    }
+      else{
+        header('location:login.php');
+      }
+      }
     if (isset($_POST['submit_ticket'])) {
       $name = $_POST['name'];
       $email = $_POST['email'];

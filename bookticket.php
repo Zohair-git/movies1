@@ -106,8 +106,8 @@ session_start();
   <div class="mb-3">
   <label  class="form-label">Ticket Class</label>
   <select name="select_name"class="form-control bg-transparent" id="" style="border:0px; border-bottom:2px solid white;">
-    <option value="Golden Class" >Gold seats 2500RS</option>
-    <option value="Plat Class">Plat seats 3000RS</option>
+    <option value="Golden Class" >Gold seats Rs.2500/</option>
+    <option value="Plat Class">Plat seats Rs.3000/</option>
 
   </select>
   <input name = "movie_n" type="hidden" value =" <?php echo $fetching['title'] ?>">

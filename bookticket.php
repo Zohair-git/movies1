@@ -20,14 +20,13 @@ session_start();
       $movie_d =$_POST['movie_d'];
       $movie_t =$_POST['movie_t'];
       $user_id = $_SESSION['id'] ;
-      // echo $user_id;
+      
 
       $select_categories = "INSERT INTO `tbl_ticket`( `name`,  `childrens`, `Adults`, `seat_categories`,`user_id`, `movie_name` , `movie_date` , `movie_time`)
        VALUES ('$name','$adult','$children','$select_name','$user_id','$movie_n' , '$movie_d' , '$movie_t')";
       $select_categories_run = mysqli_query($conn,$select_categories);
       if ($select_categories_run) {
-        header('location:summary.php');
-        
+       header('location:summary.php');
       }
     }
 

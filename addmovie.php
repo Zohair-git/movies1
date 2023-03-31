@@ -71,7 +71,7 @@ $img = $_FILES['img']['name'];
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Movie Title</label>
-    <input type="text" class="form-control" id="exampleInputPassword1" name="title">
+    <input type="text" class="form-control" id="exampleInputPassword1" name="title" placeholder="">
   </div>
 
   <div class="mb-3">
@@ -95,15 +95,17 @@ $img = $_FILES['img']['name'];
     <label for="exampleInputPassword1" class="form-label">Movie Time</label>
     <input type="time" class="form-control" id="exampleInputPassword1" name="movie_time">
   </div>
+
+
   <div class="row">
-    <div class="col-lg-2">
-    <button type="submit" class="btn btn-primary" name="submit" >Submit</button>
+    <div class="form-group col-lg-4">
+    <input type="submit" name="submit" value="ADD MOVIE" >
   
     </div>
-    <div class="col-lg-4">
-    <button type="submit" class="btn btn-dark" name="submit">BACK TO HOME</button>
+    <div class="form-group col-lg-6">
+    <input type="submit"   value="BACK TO HOME">
     </div>
-    </div>
+</div>
 
 </form>
 </div>

@@ -127,7 +127,7 @@ session_start();
     <div class="form-group col-lg-6">
     <input type="submit"  name="submit" value="BACK TO HOME">
     </div>
-    </div>
+</div>
 
   <?php }?>
 </form>

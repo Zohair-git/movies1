@@ -135,7 +135,14 @@ $run = mysqli_query($conn, $select_query);
                     $date_now = date("Y-m-d");
                     $move_date =$row['movie_date'];
                     if ( strtotime($date_now) < strtotime($move_date)  ) {?>
-                       <a href="#0" class="custom-button back-button">proceed</a>
+                       <form action="payment.php" method="post">
+                                                    <input type="submit" name="payment_btn" value="proceed">
+                                                    <input type="text" name="hidden_id" value="<?php echo $row['id']?>">
+                                                    <input type="text" name="seat_hidden" value="<?php echo $row['seat_categories']?>">
+
+                                                    
+                                                </form>
+                                          
                  <?php   } else{
                     echo "This ticket is expire";
                  } ?>

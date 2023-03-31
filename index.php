@@ -230,7 +230,7 @@ $select_query_run = mysqli_query($conn,$select_query);
                         </div>
                         <div class="row mb-30-none justify-content-center">
                             <?php while($row = mysqli_fetch_array($select_query_run)) {?>
-                            <div class="col-sm-6 col-lg-6" >
+                            <div class="col-sm-6 col-lg-6"  >
                                 <div class="movie-grid">
                                     <div class="movie-thumb c-thumb">
                                         <a href="#0">
@@ -256,12 +256,12 @@ $select_query_run = mysqli_query($conn,$select_query);
                                         <br>
                                         <div class="col-lg-6">
                                          <form action="movie-details.php" method="post" class="form-group">
-                                            <input type="submit" name="description_button" class="ty" value="About <?php echo $row['title']?>" >
+                                            <input type="submit" name="description_button" class="ty" value="About <?php echo $row['title']?>">
                                             <input type="hidden" name="hidden_id" value="<?php echo $row['id']?>">
                                             </form>
                                            
                                                 <form action="bookticket.php" method="post" class="form-group">
-                                                    <input type="submit" name="bookticket_button" value="Book Ticket Now">
+                                                    <input type="submit" name="bookticket_button" value="Book Ticket Now" >
                                                     <input type="hidden" name="hidden_id1" value="<?php echo $row['id']?>">
                                                     
                                                          </form><br>

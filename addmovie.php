@@ -67,7 +67,7 @@ $img = $_FILES['img']['name'];
 
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Movie Banner</label>
-    <input type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="img">
+    <input type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="img" >
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Movie Title</label>
@@ -77,24 +77,24 @@ $img = $_FILES['img']['name'];
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Trailer Link</label>
     <input type="text" class="form-control" id="exampleInputPassword1" name="link">
-  </div>
+  </div><br>
 
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Gold Seats</label>
     <input type="number" class="form-control" id="exampleInputPassword1" name="gold_seats">
-  </div>
+  </div><br>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Platinum Seats</label>
     <input type="number" class="form-control" id="exampleInputPassword1" name="plat_seats">
-  </div>
+  </div><br>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Movie Date</label>
     <input type="Date" class="form-control" id="exampleInputPassword1" name="movie_date">
-  </div>
+  </div><br>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Movie Time</label>
     <input type="time" class="form-control" id="exampleInputPassword1" name="movie_time">
-  </div>
+  </div><br>
 
 
   <div class="row">

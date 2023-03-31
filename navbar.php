@@ -86,8 +86,8 @@
                             <?php $name = $_SESSION["name"];
                                 $pfp = $_SESSION["pfp"];
                             ?>
-                            <div class="col-lg-8"><p><?php echo $name?></p></div>
-                            <div class="col-lg-4"><img src="<?php echo $pfp?>" style="border-radius: 20px;"  width="60" height="60"></div>
+                            
+                            <div class="col-lg-4"><img src="<?php echo $pfp?>" style="border-radius: 100%;"  width="60" height="60"></div><div class="col-lg-8"><p><?php echo $name?></p></div>
                         </div>  
                 </ul>
                 <div class="header-bar d-lg-none">

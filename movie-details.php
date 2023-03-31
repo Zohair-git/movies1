@@ -29,13 +29,18 @@ session_start();
     <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
     <link rel="stylesheet" href="assets/css/nice-select.css">
     <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/Feedback.css">
     <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
-  
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
    
     <title>Boleto  - Online Ticket Booking Website HTML Template</title>
 
+<style>
+    .rating{
+        width: 20px;
+        height: 20px;
 
+    }
+</style>
 </head>
 
 <body>
@@ -74,7 +79,9 @@ session_start();
                      </div>
                 </div>
                 <div class="details-banner-content offset-lg-3">
-                    <h3 class="title active" ><?php echo $fetch['title']?></h3>
+                    <h3 class="title active" ><?php
+                        $_SESSION["movie_name"] = $fetch['title'];
+                    echo $fetch['title']?></h3>
                     <div class="tags">
                         <a href="#0" >English</a>
                         <a href="#0">Hindi</a>
@@ -234,9 +241,9 @@ session_start();
                        
          
                         <div class="tab summery-review">
-
+                         <!-- for login users    -->
+                            <?php if(isset($_SESSION['check'])) {?>
                             <ul class="tab-menu">   
-                                <?php if(isset($_SESSION['check'])) {?>
                                 <li class="active">
                                     Post your reviews
                                 </li>
@@ -246,153 +253,136 @@ session_start();
                                 <li >
                                     summery
                                 </li>
-                                    <?php }?>
-                                    <?php if(!isset($_SESSION['check'])) {?>
-                               
-                                <li class="active">
-                                    User reviews
-                                </li>
-                                <li >
-                                    summery
-                                </li>
-                                    <?php }?>
-                              
                             </ul>
-                            <div class="tab-area">
-                            <?php if(isset($_SESSION['check'])) {?>
-                                <div class="tab-item active">
-                                    <div class="item">
-                                    <div class="row">        
-                                    <div class="col-lg-8 col-md-7 col-sm-12">
-                                    <textarea id="reviews" placeholder="Post your Review" cols="10"></textarea>
-                                    <br>
-                                </div>
-                                <div class="col-lg-4 col-md-4 col-sm-12">
-                                    <h5 class="my-4">Post Your Rating</h5>
-                                     <div class="rate"  >
-                                        <input type="radio" class="star" id="star5" name="rate" value= "5" />
-                                        <label for="star5" title="text">5 stars</label>
-                                            <input type="radio" class="star" id="star4" name="rate" value= "4" />
-                                         <label for="star4" title="text">4 stars</label>
-                                         <input type="radio" class="star" id="star3" name="rate" value= "3" />
-                                     <label for="star3" title="text">3 stars</label>
-                                <input type="radio" class="star" id="star2" name="rate" value= "2" />
-                                  <label for="star2" title="text">2 stars</label>
-                                        <input type="radio" class="star" id="star1" name="rate" value= "1" />
-                                 <label for="star1" title="text" >1 star</label>
-                                  </div>  
-                                </div>
+                                <?php }?>
+                              
+                                    
+                                <div class="tab-area">
+                                    <?php if(isset($_SESSION['check'])) {?>
+                                        <div class="tab-item active">
+                                            <div class="item">
+                                                <div class="row">        
+                                                    <div class="col-lg-8 col-md-7 col-sm-12">
+                                                        <textarea id="reviews" placeholder="Post your Review" cols="10"></textarea>
+                                                        <br>
+                                                    </div>
+                                                    <div class="col-lg-4 col-md-4 col-sm-12 ">
+                                                            
+                                                        <h5 class="mt-5 mb-3">Post your rating </h5>
+                                                        
+                                                        
+                                                         <input type="radio" id="star" class="rating mx-1" value="5">
+                                                    
+                                                          <input type="radio" id="star"  class="rating mx-1" value="4">
+                                                    
+                                                            <input type="radio" id="star"  class="rating mx-1" value="3">
+                                                             <input type="radio" id="star"  class="rating mx-1" value="2">
+                                                             <input type="radio"  id="star" class="rating mx-1" value="1">
+                                                             </div>
                             </div>  
                             <input class="btn btn-primary form-control" id="ID_button" type="button" value="Submit Your Review">
                         </div>
                         <div id="ID_div"></div>
-                                </div>
-                                
-                                
-                                <div class="tab-item "> 
+                      </div>
+
+
+                      
+                      <div class="tab-item "> 
+                                    <?php while($row = mysqli_fetch_array($select_logout_user_reviews_run)) {?>
                                     <div class="movie-review-item">
                                         <div class="author">
-                                            <div class="thumb">
-                                                <a href="#0">
-                                                    <img src="./assets/images/cast/cast02.jpg" alt="cast">
-                                                </a>
-                                            </div>
+                                            
+                                            <a href="#0">
+                                                <img src="<?php echo $row['pfp']?>"  style="border-radius:50px" width="50" height="50" alt="cast">
+                                            </a>
+                                            
                                             <div class="movie-review-info">
-                                                <span class="reply-date">13 Days Ago</span>
-                                                <h6 class="subtitle"><a href="#0">minkuk seo</a></h6>
-                                                <span><i class="fas fa-check"></i> verified review</span>
+                                                <span class="reply-date"></span>
+                                                <h6 class="subtitle"><?php echo $row['Name']?></h6>
                                             </div>
                                         </div>
                                         <div class="movie-review-content">
                                             <div class="review">
-                                                <i class="flaticon-favorite-heart-button"></i>
-                                                <i class="flaticon-favorite-heart-button"></i>
-                                                <i class="flaticon-favorite-heart-button"></i>
-                                                <i class="flaticon-favorite-heart-button"></i>
-                                                <i class="flaticon-favorite-heart-button"></i>
+                                            <?php echo $row['rating']?> <i class="flaticon-favorite-heart-button"></i>
+                                                
                                             </div>
-                                            <h6 class="cont-title">Awesome Movie</h6>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer volutpat enim non ante egestas vehicula. Suspendisse potenti. Fusce malesuada fringilla lectus venenatis porttitor. </p>
-                                            <div class="review-meta">
-                                                <a href="#0">
-                                                    <i class="flaticon-hand"></i><span>8</span>
-                                                </a>
-                                                <a href="#0" class="dislike">
-                                                    <i class="flaticon-dont-like-symbol"></i><span>0</span>
-                                                </a>
-                                                <a href="#0">
-                                                    Report Abuse
-                                                </a>
-                                            </div>
+                                            
+                                            <p><?php echo $row['review']?> </p>
+                                            
                                         </div>
                                     </div>
-                            
+                                    <?php }?>
+                                    
                                     <div class="load-more text-center">
                                         <a href="#0" class="custom-button transparent">load more</a>
                                     </div>
                                 </div>
-                                <div class="tab-item">
-
-                                        <h5 class="sub-title">Synopsis</h5>
-                                        <br>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vehicula eros sit amet est tincidunt aliquet. Fusce laoreet ligula ac ultrices eleifend. Donec hendrerit fringilla odio, ut feugiat mi convallis nec. Fusce elit ex, blandit vitae mattis sit amet, iaculis ac elit. Ut diam mauris, viverra sit amet dictum vel, aliquam ac quam. Ut mi nisl, fringilla sit amet erat et, convallis porttitor ligula. Sed auctor, orci id luctus venenatis, dui dolor euismod risus, et pharetra orci lectus quis sapien. Duis blandit ipsum ac consectetur scelerisque. </p>
-                                    </div>
-
-                                    <?php }?>
-                                    <?php if(!isset($_SESSION['check'])) {?>
-
-                                        <div class="tab-item active"> 
-                                        <?php while($logoutuser = mysqli_fetch_array($select_logout_user_reviews_run)) {?>
-                                    <div class="movie-review-item">
-                                        <div class="author">
-                                            <div class="thumb">
-                                                <a href="#0">
-                                                    <img src="./assets/images/cast/cast03.jpg" alt="cast">
-                                                </a>
-                                            </div>
-                                            <div class="movie-review-info">
-                                                <span class="reply-date">13 Days Ago</span>
-                                                <h6 class="subtitle"><a href="#0">bela bose</a></h6>
-                                                <span><i class="fas fa-check"></i> verified review</span>
-                                            </div>
-                                        </div>
-                                        <div class="movie-review-content">
-                                            <div class="review">
-                                                <i class="flaticon-favorite-heart-button"></i>
-                                                <i class="flaticon-favorite-heart-button"></i>
-                                                <i class="flaticon-favorite-heart-button"></i>
-                                                <i class="flaticon-favorite-heart-button"></i>
-                                                <i class="flaticon-favorite-heart-button"></i>
-                                            </div>
-                                            <h6 class="cont-title">Hello</h6>
-                                            <p><?php echo $logoutuser['review']?> </p>
-                                            <div class="review-meta">
-                                                <a href="#0">
-                                                    <i class="flaticon-hand"></i><span>8</span>
-                                                </a>
-                                                <a href="#0" class="dislike">
-                                                    <i class="flaticon-dont-like-symbol"></i><span>0</span>
-                                                </a>
-                                                <a href="#0">
-                                                    Report Abuse
-                                                </a>    
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <?php }?>
-                                    <div class="load-more text-center">
-                                        <a href="#0" class="custom-button transparent">load more</a>
-                                    </div>
-                                </div>
-                                <div class="tab-item">
-
-<h5 class="sub-title">Synopsis</h5>
+                                    <div class="tab-item">
+                                <h5 class="sub-title">Synopsis</h5>
 <br>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vehicula eros sit amet est tincidunt aliquet. Fusce laoreet ligula ac ultrices eleifend. Donec hendrerit fringilla odio, ut feugiat mi convallis nec. Fusce elit ex, blandit vitae mattis sit amet, iaculis ac elit. Ut diam mauris, viverra sit amet dictum vel, aliquam ac quam. Ut mi nisl, fringilla sit amet erat et, convallis porttitor ligula. Sed auctor, orci id luctus venenatis, dui dolor euismod risus, et pharetra orci lectus quis sapien. Duis blandit ipsum ac consectetur scelerisque. </p>
+<p>Summary will be provided by the admin on every particular movie</p>
 </div>
 
-                                <?php }?>
+                                
+                        <?php }?>
+   
+                 <!-- for not login users -->
+                 <?php if(!isset($_SESSION['check'])) {?>
+                                    <ul class="tab-menu">
+                                    
+                                    <li class="active">
+                                        User reviews
+                                    </li>
+                                    <li >
+                                        summery
+                                    </li>
+                                </ul>
+                                    <?php }?>
+
+                                    <?php if(!isset($_SESSION['check'])) {?>
+                                        
+                                        <div class="tab-item active"> 
+                                            <?php while($logoutuser = mysqli_fetch_array($select_logout_user_reviews_run)) {?>
+                                                <div class="movie-review-item">
+                                        <div class="author">
+                                         
+                                                <a href="#0">
+                                                    <img src="<?php echo $logoutuser['pfp']?>" style="border-radius:50px" width="50" height="50"  alt="cast">
+                                                </a>
+                                           
+                                            <div class="movie-review-info">
+                                            <span class="reply-date"></span>
+                                                <h6 class="subtitle"><?php echo $logoutuser['Name']?></h6>
+                                             
+                                            </div>
+                                        </div>
+                                        <div class="movie-review-content">
+                                            <div class="review">
+                                            <?php echo $logoutuser['rating']?>  <i class="flaticon-favorite-heart-button"></i>
+                                              </div>
+                                           
+                                            <p><?php echo $logoutuser['review']?> </p>
+                                      
+                                        </div>
+                                    </div>
+                                    <?php }?>
+                                    
+                                    <div class="load-more text-center">
+                                        <a href="#0" class="custom-button transparent">load more</a>
+                                    </div>
+                           
+                                </div>
+                               
+                                 
+                                    <div class="tab-item">
+                                <h5 class="sub-title">Synopsis</h5>
+<br>
+<p>Summary will be provided by the admin on every particular movie</p>
+</div>
+
                             </div>
+                                <?php }?>
+                                </div>
                         </div>
                     </div>
                 </div>
@@ -400,7 +390,7 @@ session_start();
         </div>
     </section>
     <!-- ==========Movie-Section========== -->
-
+    
     <!-- ==========Newslater-Section========== -->
     <footer class="footer-section">
       
@@ -486,19 +476,11 @@ session_start();
     <script>
         $(document).ready(function(){
                 dataLoad();
-                function dataLoad(){
-            $.ajax({
-                url: 'storereviews.php',
-                type: 'POST',
-                success: function(data) {
-                    $('#ID_div').html(data);
-                }
-            })
-        }
+
 
 
             $('#ID_button').click(function(){
-            var stars = $('.star').val();
+            var stars = $('#star').val();
                 var review = $('#reviews').val();
             $.ajax({
                 url: 'storereviews.php',
@@ -517,9 +499,19 @@ session_start();
                 }
             })
         })
+
+
         })
   
-      
+        function dataLoad(){
+            $.ajax({
+                url: 'storereviews.php',
+                type: 'POST',
+                success: function(data) {
+                    $('#ID_div').html(data);
+                }
+            })
+        }
     </script>
 </body>
 

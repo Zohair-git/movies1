@@ -7,7 +7,10 @@ if(isset($_POST['store'])){
     $reviews = $_POST['reviews'];
     $stars = $_POST['star_value'];
     $email = $_SESSION['email'];
-    $insert_query = "INSERT INTO `tbl_user_reviews`(`review`, `rating`,`user_email`) VALUES ('$reviews','$stars','$email')";
+    $name = $_SESSION["name"];
+    $pfp = $_SESSION["pfp"];
+    $movie_name = $_SESSION["movie_name"];
+    $insert_query = "INSERT INTO `tbl_user_reviews`(`review`,`rating`,`user_email`,`movie_name`,`Name`,`pfp`) VALUES ('$reviews','$stars','$email','$movie_name','$name','$pfp')";
     $insert_query_run = mysqli_query($conn,$insert_query);
     if($insert_query_run){
         echo 1;
@@ -35,36 +38,32 @@ if(isset($_POST['store'])){
     <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
     <link rel="stylesheet" href="assets/css/nice-select.css">
     <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/Feedback.css">
     <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
     <title>Document</title>
 </head>
 <body>
-    
-    <?php while($reviews = mysqli_fetch_array($select_query_run)) {?>
+<h4>Your Reviews</h4>
+    <br>
+    <?php while($reviewss = mysqli_fetch_array($select_query_run)) {?>
+   
         <div class="movie-review-item">
                                         <div class="author">
-                                            <div class="thumb">
+                                            
                                                 <a href="#0">
-                                                    <img src="./assets/images/cast/cast04.jpg" alt="cast">
+                                                    <img src="<?php echo $reviewss["pfp"]?>" style="border-radius:50px" width="50" height="50" alt="cast">
                                                 </a>
-                                            </div>
+                                            
                                             <div class="movie-review-info">
                                                 <span class="reply-date"></span>
-                                                <h6 class="subtitle"><a href="#0">rudra rai</a></h6>
+                                                <h6 class="subtitle"><?php echo $reviewss["Name"]?></h6>
                                                 
                                             </div>
                                         </div>
                                         <div class="movie-review-content">
                                             <div class="review">
-                                                <i class="flaticon-favorite-heart-button"></i>
-                                                <i class="flaticon-favorite-heart-button"></i>
-                                                <i class="flaticon-favorite-heart-button"></i>
-                                                <i class="flaticon-favorite-heart-button"></i>
-                                                <i class="flaticon-favorite-heart-button"></i>
+                                              <?php echo $reviewss['rating']?> <i class="flaticon-favorite-heart-button"></i>
                                             </div>
-                                            <h6 class="cont-title">Awesome Movie</h6>
-                                            <p><?php echo $reviews['review']?> </p>
+                                            <p><?php echo $reviewss['review']?> </p>
                                   
                                         </div>
                                     </div>

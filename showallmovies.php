@@ -80,7 +80,7 @@ $run_query = mysqli_query($conn,$select_query);
         <td><?php echo $data['Movie Time'];?></td>
         <td><?php echo $data['Movie_watchtime'];?></td>
         <td><?php echo $data['Movie type'];?></td>
-        <td><iframe  height="150" width="250" <?php echo $data['trailerlink'];?>></td>
+        <td><?php echo $data['trailerlink'];?></td>
 
 
             

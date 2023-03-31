@@ -7,7 +7,7 @@ session_start();
         $select_bookticket ="SELECT * FROM `tbl_addmovies` WHERE id = '$id'";
         $select_bookticket_run = mysqli_query($conn,$select_bookticket);
       } 
-      else{
+      else{ 
         header('location:login.php');
       }
       }

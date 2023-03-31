@@ -10,18 +10,16 @@ $run = mysqli_query($conn, $select_query);
 
 
 
-?>
+?>    
 
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+<link href="css/tablestyling.css" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/all.min.css">
     <link rel="stylesheet" href="assets/css/animate.css">
     <link rel="stylesheet" href="assets/css/flaticon.css">
@@ -30,33 +28,31 @@ $run = mysqli_query($conn, $select_query);
     <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
     <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
     <link rel="stylesheet" href="assets/css/nice-select.css">
+    <link rel="stylesheet" href="assets/css/jquery.animatedheadline.css">
     <link rel="stylesheet" href="assets/css/main.css">
-
-    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
-
-    <title>Boleto - Online Ticket Booking Website HTML Template</title>
-
+    <title>Document</title>
     <style>
-        .hh {
-            /* margin-top : 150px;  */
-            margin-top: 125px;
-        }
-    </style>
+.hh {
+    /* margin-top : 150px;  */
+    margin-top: 125px;
+}
+</style>
 </head>
 
 <body>
-    <div><?php include('navbar.php') ?></div>
-
-
-
-    <div>
+<div class="overlay"></div>
+    <a href="#0" class="scrollToTop">
+        <i class="fas fa-angle-up"></i>
+    </a>
+    <?php include('navbar.php');?>
+<br><br><br><br>
     <?php while ($row = mysqli_fetch_array($run)) { ?>
 
         <div class="col mt-5 hh">
             <div class="booking-summery mt-5 ms-5 bg-one">
 
 
-                    <h4 class="title mt-5">booking summery</h4>
+                    <h4 class="title mt-5">booking summary</h4>
                     <ul>
                         <li>
                             <h6 class="subtitle">Movie Name:<?php echo $row['movie_name']  ?></h6>
@@ -124,8 +120,7 @@ $run = mysqli_query($conn, $select_query);
 
                         </li>
                     </ul>
-            </div>
-            <div class="proceed-area  text-center">
+                    <div class="proceed-area  text-center">
                 <h6 class="subtitle"><span>Amount Payable</span><span><?php if (
                                                                             $row['seat_categories'] == 'Plat Class'
                                                                         ) {
@@ -146,6 +141,8 @@ $run = mysqli_query($conn, $select_query);
                  } ?>
                 
             </div>
+            </div>
+
         </div>
 
 
@@ -154,7 +151,21 @@ $run = mysqli_query($conn, $select_query);
 <?php } ?>
 </div>
 </div>
-
+<br><br><br><br>
+<script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/modernizr-3.6.0.min.js"></script>
+    <script src="assets/js/plugins.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/heandline.js"></script>
+    <script src="assets/js/isotope.pkgd.min.js"></script>
+    <script src="assets/js/magnific-popup.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/countdown.min.js"></script>
+    <script src="assets/js/odometer.min.js"></script>
+    <script src="assets/js/viewport.jquery.js"></script>
+    <script src="assets/js/nice-select.js"></script>
+    <script src="assets/js/main.js"></script>
 
 
 </body>

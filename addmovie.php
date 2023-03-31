@@ -41,7 +41,30 @@ $img = $_FILES['img']['name'];
     <link rel="stylesheet" href="assets/css/jquery.animatedheadline.css">
     <link rel="stylesheet" href="assets/css/main.css">
     <title>Document</title>
+      <style>
+         .form-group .anchor {
+  background-image: -webkit-linear-gradient(169deg, #5560ff 17%, #aa52a1 63%, #ff4343 100%);
+  -webkit-transition: all ease 0.3s;
+  transition: all ease 0.3s;
+  border-radius: 30px;
+  width: auto;
+  /* padding: 0 50px; */
+  height: 50px;
+  text-transform: uppercase;
+  margin: 0 auto;
+  color:white;
+  font-weight:bold;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.form-group .anchor:hover {
+  -webkit-box-shadow: 0px 10px 15px 0px rgba(59, 55, 188, 0.5);
+          box-shadow: 0px 10px 15px 0px rgba(59, 55, 188, 0.5);
+}
 
+
+      </style>
 </head>
 <body>
 <div class="overlay"></div>
@@ -51,8 +74,8 @@ $img = $_FILES['img']['name'];
     <?php include('navbar.php');?>
 <br><br><br><br>
 
-  <div class="container col-lg-6">
-<form method="POST" enctype="multipart/form-data">
+  <div class="container col-lg-7">
+<form method="POST" enctype="multipart/form-data" >
 
 <div class="banner-content">
                 <h1><span>Upload a</span>
@@ -65,45 +88,54 @@ $img = $_FILES['img']['name'];
             </div>
             <br><br>
 
-  <div class="mb-3">
+              <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Movie Banner</label>
-    <input type="file" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="img">
+    <input type="file" class="form-control bg-transparent" id="exampleInputEmail1" aria-describedby="emailHelp" name="img" style="border:0px; border-bottom:2px solid white;"  >
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Movie Title</label>
-    <input type="text" class="form-control" id="exampleInputPassword1" name="title">
+    <input type="text" class="form-control bg-transparent" id="exampleInputPassword1" name="title" placeholder="Enter Movie Title" style="border:0px; border-bottom:2px solid white;" >
   </div>
 
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Trailer Link</label>
-    <input type="text" class="form-control" id="exampleInputPassword1" name="link">
+    <input type="text" class="form-control bg-transparent" id="exampleInputPassword1" name="link" placeholder="Enter Trailer Link" style="border:0px; border-bottom:2px solid white;" >
   </div>
 
-  <div class="mb-3">
+              <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Gold Seats</label>
-    <input type="number" class="form-control" id="exampleInputPassword1" name="gold_seats">
+    <input type="number" class="form-control bg-transparent" id="exampleInputPassword1" name="gold_seats" placeholder="Available Gold Seats" style="border:0px; border-bottom:2px solid white;" >
   </div>
   <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Platinum Seats</label>
-    <input type="number" class="form-control" id="exampleInputPassword1" name="plat_seats">
+    <label for="exampleInputPassword1" class="form-label">Platinium Seats</label>
+    <input type="number" class="form-control bg-transparent" id="exampleInputPassword1" name="plat_seats" placeholder="Available Platinium Seats" style="border:0px; border-bottom:2px solid white;" >
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Movie Date</label>
-    <input type="Date" class="form-control" id="exampleInputPassword1" name="movie_date">
+    <input type="Date" class="form-control bg-transparent" id="exampleInputPassword1" name="movie_date" placeholder="Onscreen Date" style="border:0px; border-bottom:2px solid white;" >
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Movie Time</label>
-    <input type="time" class="form-control" id="exampleInputPassword1" name="movie_time">
-  </div>
-  <div class="row">
-    <div class="col-lg-2">
-    <button type="submit" class="btn btn-primary" name="submit" >Submit</button>
+    <input type="time" class="form-control bg-transparent" id="exampleInputPassword1" name="movie_time" placeholder="Onscreen Time" style="border:0px; border-bottom:2px solid white;" >
+</div>
+
+<div class="row">
+    <div class="form-group col-lg-3">
+    <input type="submit" name="submit" value="ADD MOVIE" >
   
     </div>
-    <div class="col-lg-4">
-    <button type="submit" class="btn btn-dark" name="submit">BACK TO HOME</button>
+    <div class="form-group col-lg-4 mx-3">
+    <a href="index.php" class="anchor">BACK TO HOME</a>
     </div>
-    </div>
+</div>
+              </div>
+
+<br>
+
+
+
+
+
 
 </form>
 </div>

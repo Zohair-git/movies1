@@ -86,7 +86,7 @@ $run_query = mysqli_query($conn,$select_query);
             
                       
                  <td><a href="deletemovie.php?id=<?php echo $data['id'];?>" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this movie?')">DELETE</a>
-            <a href="updatemovie.php?id=<?php echo $data['id'];?>" class="btn btn-primary" >UPDATE</a></td>
+            <a href="updatemovie.php?id=<?php echo $data['id'];?>" class="btn btn-primary" >UPDATEE</a></td>
             </tr>
 
         

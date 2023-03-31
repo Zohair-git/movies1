@@ -86,7 +86,7 @@ if(isset($_POST['loginbtn'])){
                     <form class="account-form" method="POST">
                         <div class="form-group">
                             <label for="email2">Email<span>*</span></label>
-                            <input type="text" name="uname" placeholder="Enter Your Email" id="email2" required>
+                            <input type="text"  name="uname" placeholder="Enter Your Email" id="email2" required>
                         </div>
                         <div class="form-group">
                             <label for="pass3">Password<span>*</span></label>

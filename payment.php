@@ -19,9 +19,7 @@ include('connection.php');
         $select_movie = "SELECT * FROM `tbl_addmovies` WHERE title = '$movie_name'";
         $select_bookticket_run1 = mysqli_query($conn,$select_movie);
        
-        if (condition) {
-            # code...
-        }
+       
          mysqli_fetch_array($select_bookticket_run1);
         
         $gold_seat_fetch =  $fetching['Gold_seats'] ;

@@ -68,10 +68,11 @@ $run = mysqli_query($conn, $select_query);
                                                                                         } else {
                                                                                             echo 'Rs 2500';
                                                                                         } ?></span></h6>
+                            <p class="subtitle mb-0 mt-3"><span>Chilrens</span><span><?php echo $row['childrens'] ?></span>
+                            <p>                                                            
                             <p class="subtitle mb-0 mt-3"><span>Adults</span><span><?php echo $row['Adults'] ?></span>
                             <p>
-                            <p class="subtitle mb-0 mt-3"><span>Chilrens</span><span><?php echo $row['childrens'] ?></span>
-                            <p>
+                            
 
                         </li>
                     </ul>
@@ -121,7 +122,7 @@ $run = mysqli_query($conn, $select_query);
                         </li>
                     </ul>
                     <div class="proceed-area  text-center">
-                <h6 class="subtitle"><span>Amount Payable</span><span><?php if (
+                <h6 class="subtitle" ><span>Amount Payable</span><span><?php if (
                                                                             $row['seat_categories'] == 'Plat Class'
                                                                         ) {
                                                                             $total_amount1 = $child_discount + $plat_t3;
@@ -135,10 +136,9 @@ $run = mysqli_query($conn, $select_query);
                     $date_now = date("Y-m-d");
                     $move_date =$row['movie_date'];
                     if ( strtotime($date_now) < strtotime($move_date)  ) {?>
-                       <form action="payment.php" method="post">
+                       <form action="paymentmethod.php" method="post">
                                                     <input type="submit" name="payment_btn" value="proceed">
-                                                    <input type="text" name="hidden_id" value="<?php echo $row['id']?>">
-                                                    <input type="text" name="seat_hidden" value="<?php echo $row['seat_categories']?>">
+                                                    <input type="hidden" name="hidden_id" value="<?php echo $row['id']?>">
 
                                                     
                                                 </form>

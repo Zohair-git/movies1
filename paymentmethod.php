@@ -6,10 +6,10 @@ include('connection.php');
     $s_query = "SELECT * FROM `tbl_ticket` WHERE id = '$ids'";
     $run = mysqli_query($conn, $s_query);
     $fetch = mysqli_fetch_array($run);
-
-
-
     } 
+
+
+
 
 ?>
 <!DOCTYPE html>
@@ -116,48 +116,29 @@ include('connection.php');
                   
                    
                     <div class="checkout-widget checkout-card mb-0">
-                        <h5 class="title">Payment Option </h5>
-                        <ul class="payment-option">
-                            <li class="active">
-                                <a href="#0">
-                                    <img src="./assets/images/payment/card.png" alt="payment">
-                                    <span>Credit Card</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#0">
-                                    <img src="./assets/images/payment/card.png" alt="payment">
-                                    <span>Debit Card</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#0">
-                                    <img src="./assets/images/payment/paypal.png" alt="payment">
-                                    <span>paypal</span>
-                                </a>
-                            </li>
-                        </ul>
+                       
                         <h6 class="subtitle">Enter Your Card Details </h6>
-                        <form class="payment-card-form">
+                        <form method = post class="payment-card-form">
                             <div class="form-group w-100">
                                 <label for="card1">Card Details</label>
-                                <input type="text" id="card1">
+                                <input type="text" name = 'card_d' id="card1">
                                 <div class="right-icon">
                                     <i class="flaticon-lock"></i>
                                 </div>
                             </div>
                             <div class="form-group w-100">
                                 <label for="card2"> Name on the Card</label>
-                                <input type="text" id="card2">
+                                <input type="text" name = 'noc'  id="card2">
                             </div>
                             <div class="form-group">
                                 <label for="card3">Expiration</label>
-                                <input type="text" id="card3" placeholder="MM/YY">
+                                <input type="date" name = 'expiration' id="card3" placeholder="MM/YY">
                             </div>
                             <div class="form-group">
                                 <label for="card4">CVV</label>
-                                <input type="text" id="card4" placeholder="CVV">
+                                <input type="text" id="card4" name = 'cvv' placeholder="CVV">
                             </div>
+                            
                             <div class="form-group check-group">
                                 <input id="card5" type="checkbox" checked>
                                 <label for="card5">
@@ -166,7 +147,8 @@ include('connection.php');
                                 </label>
                             </div>
                             <div class="form-group">
-                                <input type="submit" class="custom-button" value="make payment">
+                              
+                            <a  type="submit"  class="custom-button" href="updateseat.php?id=<?php echo $fetch['id']?>">Make Payment</a>
                             </div>
                         </form>
                         <p class="notice">
@@ -189,9 +171,17 @@ include('connection.php');
                             </li>
                             <li> 
                                 <h6 class="subtitle mb-0"><span>Tickets  Price</span><span><?php if ($fetch['seat_categories'] == 'Plat Class') {
-                                    echo 'Rs' . " " . '3000';
+                                    $child = $fetch['childrens'] * 2400;
+                                   $adults = $fetch['Adults'] * 3000;
+                                   $total_a = $child + $adults;
+
+                                   echo $total_a;
                                 }else {
-                                    echo 'Rs' . " " . '2500';
+                                    $child = $fetch['childrens'] * 2000;
+                                    $adults = $fetch['Adults'] * 2500;
+                                    $total_a = $child + $adults;
+ 
+                                    echo $total_a;
                                 }  ?></span></h6>
                             </li>
                         </ul>

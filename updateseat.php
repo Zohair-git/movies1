@@ -31,7 +31,7 @@ if ($fetch['seat_categories'] == 'Plat Class') {
     $run_u1 = mysqli_query($conn , $up_1);
     
 }else {
-    $up_2 = "UPDATE `tbl_addmovies` SET `Platinum_seats`='$G_left' WHERE id = '$m_id'";
+    $up_2 = "UPDATE `tbl_addmovies` SET `Gold_seats`='$G_left' WHERE id = '$m_id'";
     $run_u2 = mysqli_query($conn , $up_2);
 }
 

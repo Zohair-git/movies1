@@ -5,9 +5,11 @@ if(isset($_POST['description_button'])){
  $id = $_POST['hidden_id'];
  $select_descriptive = "SELECT * FROM `tbl_addmovies` WHERE id = '$id'";
  $select_descriptive_run = mysqli_query($conn,$select_descriptive);
+ $_SESSION['reviews_hidden_id'] = $id;
  }
 
- $select_logout_user_reviews = "SELECT * FROM `tbl_user_reviews` ";
+ $review_hidden = $_SESSION['reviews_hidden_id'];
+ $select_logout_user_reviews = "SELECT * FROM `tbl_user_reviews` WHERE movie_name = '$review_hidden'";
  $select_logout_user_reviews_run = mysqli_query($conn,$select_logout_user_reviews);
 ?>
 <!DOCTYPE html>
@@ -81,6 +83,8 @@ width: 30px;
  <!-- ==========Header-Section========== -->
  <!-- ==========Banner-Section========== -->
  <?php while($fetch = mysqli_fetch_array($select_descriptive_run)) {?>
+    <input type="hidden" id="hidden_movieid" value="<?php echo $fetch['id']?>">
+    <input type="hidden" id="checking_id" value="<?php echo $fetch['id']?>">
 
  <section class="details-banner bg_img" data-background="./assets/images/banner/banner03.jpg">
  <div class="container">
@@ -105,8 +109,7 @@ width: 30px;
  <div class="social-and-duration">
  <div class="duration-area">
  <div class="item">
- <i class="fas fa-calendar-alt"></i><span>Release Date: <?php echo $fetch['Movie
-Date']?></span>
+ <i class="fas fa-calendar-alt"></i><span>Release Date: <?php echo $fetch['Movie Date']?></span>
  </div>
  <div class="item">
  <i class="far fa-clock"></i><span>Movie Watch Time: <?php echo
@@ -187,10 +190,8 @@ $fetch['Movie_watchtime']?></span>
  // $s_run = mysqli_query($conn,$s_run);
  $fetch_s = mysqli_fetch_array($select_descriptive_run);
  ?>
- <input type="hidden" id="hidden_movieid" value="<?php echo $fetch_s['id']?>">
  <form action="bookticket.php" method="post">
- <input type="submit" name="bookticket_button" class="custom-button p-3" value="Book
-tickets">
+ <input type="submit" name="bookticket_button" class="custom-button p-3" value="Book tickets">
  <input type="hidden" name="hidden_id1" value="<?php echo $fetch_s['id']?>">
  </form>
  </div>
@@ -334,8 +335,13 @@ height="50" alt="cast">
  </div>
  <?php }?>
 
+ 
  <div class="load-more text-center">
+ <?php if(mysqli_num_rows($select_logout_user_reviews_run) > 0) {?>
  <a href="#0" class="custom-button transparent">load more</a>
+ <?php } else {?>
+   <h3 class="text-center pt-4 text-light">No Reviews</h3>
+<?php }?>
  </div>
  </div>
  <div class="tab-item">
@@ -389,7 +395,11 @@ width="50" height="50" alt="cast">
  <?php }?>
 
  <div class="load-more text-center">
+ <?php if(mysqli_num_rows($select_logout_user_reviews_run) > 0) {?>
  <a href="#0" class="custom-button transparent">load more</a>
+ <?php } else {?>
+    <h3 class="text-center pt-4 text-light">No Reviews</h3>
+<?php }?>
  </div>
 
  </div>
@@ -503,7 +513,14 @@ width="50" height="50" alt="cast">
  })
  }
  $(document).ready(function(){
-
+    var checking_id = $('#checking_id').val();
+    $.ajax({
+ url:'storereviews.php',
+ type:'post',
+ data:{
+ checking: checking_id
+ }
+ })
  dataLoad();
  $('#ID_button').click(function(){
  var review = $('#reviews').val();

@@ -22,8 +22,13 @@ if(isset($_POST['store'])){
  exit();
  }
  }
+ if(isset($_POST['checking'])){
+     $checking_id = $_POST['checking'];
+    $_SESSION['checking_id'] = $checking_id;
+ }
  $emaill = $_SESSION['email'];
- $select_query = "SELECT * FROM `tbl_user_reviews` WHERE user_email ='$emaill'";
+ $checking = $_SESSION['checking_id'];
+ $select_query = "SELECT * FROM `tbl_user_reviews` WHERE user_email ='$emaill' AND movie_name = '$checking'";
  $select_query_run = mysqli_query($conn,$select_query);
 
 ?>

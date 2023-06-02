@@ -3,24 +3,29 @@
 // session_destroy();
 session_start();
 include('connection.php');
+if(isset($_POST['ratings'])){
+ $star = $_POST['ratings'];
+ $_SESSION['star'] = $star;
+}
 if(isset($_POST['store'])){
-    $reviews = $_POST['reviews'];
-    $stars = $_POST['star_value'];
-    $email = $_SESSION['email'];
-    $name = $_SESSION["name"];
-    $pfp = $_SESSION["pfp"];
-    $movie_name = $_SESSION["movie_name"];
-    $insert_query = "INSERT INTO `tbl_user_reviews`(`review`,`rating`,`user_email`,`movie_name`,`Name`,`pfp`) VALUES ('$reviews','$stars','$email','$movie_name','$name','$pfp')";
-    $insert_query_run = mysqli_query($conn,$insert_query);
-    if($insert_query_run){
-        echo 1;
-        exit();
-    }
-    }
-    $emaill = $_SESSION['email'];
-    $select_query = "SELECT * FROM `tbl_user_reviews` WHERE user_email ='$emaill'";
-    $select_query_run = mysqli_query($conn,$select_query);
-    
+ $reviews = $_POST['reviews'];
+ $email = $_SESSION['email'];
+ $name = $_SESSION["name"];
+ $pfp = $_SESSION["pfp"];
+ $movie_name = $_POST["movie_name"];
+ $stars = $_SESSION['star'];
+ $insert_query = "INSERT INTO `tbl_user_reviews`(`review`, `rating`, `user_email`, `movie_name`,`Name`,`pfp`)
+ VALUES ('$reviews','$stars','$email','$movie_name','$name','$pfp')";
+ $insert_query_run = mysqli_query($conn,$insert_query);
+ if($insert_query_run){
+ echo 1;
+ exit();
+ }
+ }
+ $emaill = $_SESSION['email'];
+ $select_query = "SELECT * FROM `tbl_user_reviews` WHERE user_email ='$emaill'";
+ $select_query_run = mysqli_query($conn,$select_query);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -42,6 +47,7 @@ if(isset($_POST['store'])){
     <title>Document</title>
 </head>
 <body>
+<?php if(mysqli_num_rows($select_query_run) > 0){?>
 <h4>Your Reviews</h4>
     <br>
     <?php while($reviewss = mysqli_fetch_array($select_query_run)) {?>
@@ -67,8 +73,8 @@ if(isset($_POST['store'])){
                                   
                                         </div>
                                     </div>
+                <?php }}?>
                 
-                <?php }?>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>

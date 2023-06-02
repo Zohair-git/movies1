@@ -12,7 +12,7 @@ if(isset($_POST['loginbtn'])){
             $_SESSION['check'] = true;
             $_SESSION["id"] = $row['id'];
             $_SESSION["email"] = $row["email"];
-            $_SESSION["name"] = $row["uname"] . $row["lastname"];
+            $_SESSION["name"] = $row["uname"] ." ". $row["lastname"];
             $_SESSION["pfp"] = $row["pfp"];
             header('location:index.php');
   }

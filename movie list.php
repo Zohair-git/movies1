@@ -82,112 +82,16 @@
                 </div>
                 <div class="tab-area">
                     <div class="tab-item active">
-                        <form class="ticket-search-form">
-                            <div class="form-group large">
-                                <input type="text" placeholder="Search fo Movies">
+                    <form class="ticket-search-form">
+                            <div class="form-group large" style="width:100%">
+                                <input type="text" placeholder="Search for Movies">
                                 <button type="submit"><i class="fas fa-search"></i></button>
                             </div>
-                            <div class="form-group">
-                                <div class="thumb">
-                                    <img src="./assets/images/ticket/city.png" alt="ticket">
-                                </div>
-                                <span class="type">city</span>
-                                <select class="select-bar">
-                                    <option value="london">London</option>
-                                    <option value="dhaka">dhaka</option>
-                                    <option value="rosario">rosario</option>
-                                    <option value="madrid">madrid</option>
-                                    <option value="koltaka">kolkata</option>
-                                    <option value="rome">rome</option>
-                                    <option value="khoksa">khoksa</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <div class="thumb">
-                                    <img src="./assets/images/ticket/date.png" alt="ticket">
-                                </div>
-                                <span class="type">date</span>
-                                <select class="select-bar">
-                                    <option value="26-12-19">23/10/2020</option>
-                                    <option value="26-12-19">24/10/2020</option>
-                                    <option value="26-12-19">25/10/2020</option>
-                                    <option value="26-12-19">26/10/2020</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <div class="thumb">
-                                    <img src="./assets/images/ticket/cinema.png" alt="ticket">
-                                </div>
-                                <span class="type">cinema</span>
-                                <select class="select-bar">
-                                    <option value="Awaken">Awaken</option>
-                                    <option value="dhaka">dhaka</option>
-                                    <option value="rosario">rosario</option>
-                                    <option value="madrid">madrid</option>
-                                    <option value="koltaka">kolkata</option>
-                                    <option value="rome">rome</option>
-                                    <option value="khoksa">khoksa</option>
-                                </select>
-                            </div>
-                        </form>
+</form>
                     </div>
-                    <div class="tab-item">
-                        <form class="ticket-search-form">
-                            <div class="form-group large">
-                                <input type="text" placeholder="Search fo Events">
-                                <button type="submit"><i class="fas fa-search"></i></button>
-                            </div>
-                            <div class="form-group">
-                                <div class="thumb">
-                                    <img src="./assets/images/ticket/city.png" alt="ticket">
-                                </div>
-                                <span class="type">city</span>
-                                <select class="select-bar">
-                                    <option value="london">London</option>
-                                    <option value="dhaka">dhaka</option>
-                                    <option value="rosario">rosario</option>
-                                    <option value="madrid">madrid</option>
-                                    <option value="koltaka">kolkata</option>
-                                    <option value="rome">rome</option>
-                                    <option value="khoksa">khoksa</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <div class="thumb">
-                                    <img src="./assets/images/ticket/date.png" alt="ticket">
-                                </div>
-                                <span class="type">date</span>
-                                <select class="select-bar">
-                                    <option value="26-12-19">23/10/2020</option>
-                                    <option value="26-12-19">24/10/2020</option>
-                                    <option value="26-12-19">25/10/2020</option>
-                                    <option value="26-12-19">26/10/2020</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <div class="thumb">
-                                    <img src="./assets/images/ticket/cinema.png" alt="ticket">
-                                </div>
-                                <span class="type">event</span>
-                                <select class="select-bar">
-                                    <option value="angular">angular</option>
-                                    <option value="startup">startup</option>
-                                    <option value="rosario">rosario</option>
-                                    <option value="madrid">madrid</option>
-                                    <option value="koltaka">kolkata</option>
-                                    <option value="Last-First">Last-First</option>
-                                    <option value="wish">wish</option>
-                                </select>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="tab-item">
-                        <form class="ticket-search-form">
-                            <div class="form-group large">
-                                <input type="text" placeholder="Search fo Sports">
-                                <button type="submit"><i class="fas fa-search"></i></button>
-                            </div>
-                            <div class="form-group">
+                    <!-- <div class="tab-item"> -->
+                       
+                            <!-- <div class="form-group">
                                 <div class="thumb">
                                     <img src="./assets/images/ticket/city.png" alt="ticket">
                                 </div>
@@ -228,8 +132,8 @@
                                     <option value="rome">rome</option>
                                     <option value="khoksa">khoksa</option>
                                 </select>
-                            </div>
-                        </form>
+                            </div> -->
+                        <!-- </form> -->
                     </div>
                 </div>
             </div>
@@ -245,11 +149,11 @@
                     <div class="widget-1 widget-banner">
                         <div class="widget-1-body">
                             <a href="#0">
-                                <img src="./assets/images/sidebar/banner/banner01.jpg" alt="banner">
+                                <img src="./images/marvel.jpg" height="200px" alt="banner">
                             </a>
                         </div>
                     </div>
-                    <div class="widget-1 widget-check">
+                    <!-- <div class="widget-1 widget-check">
                         <div class="widget-header">
                             <h5 class="m-title">Filter By</h5> <a href="#0" class="clear-check">Clear All</a>
                         </div>
@@ -279,8 +183,8 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="widget-1 widget-check">
+                    </div> -->
+                    <!-- <div class="widget-1 widget-check">
                         <div class="widget-1-body">
                             <h6 class="subtitle">experience</h6>
                             <div class="check-area">
@@ -295,8 +199,8 @@
                                 <a href="#0">view more <i class="plus"></i></a>
                             </div>
                         </div>
-                    </div>
-                    <div class="widget-1 widget-check">
+                    </div> -->
+                    <!-- <div class="widget-1 widget-check">
                         <div class="widget-1-body">
                             <h6 class="subtitle">genre</h6>
                             <div class="check-area">
@@ -335,19 +239,19 @@
                                 <a href="#0">view more <i class="plus"></i></a>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="widget-1 widget-banner">
                         <div class="widget-1-body">
                             <a href="#0">
-                                <img src="./assets/images/sidebar/banner/banner02.jpg" alt="banner">
+                                <img src="./images/dc.jpg" height="200px" alt="banner">
                             </a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-9 mb-50 mb-lg-0">
-                    <div class="filter-tab tab">
-                        <div class="filter-area">
-                            <div class="filter-main">
+                    <!-- <div class="filter-tab tab">
+                        <div class="filter-area"> -->
+                            <!-- <div class="filter-main">
                                 <div class="left">
                                     <div class="item">
                                         <span class="show">Show :</span>
@@ -360,8 +264,8 @@
                                             <option value="27">27</option>
                                             <option value="30">30</option>
                                         </select>
-                                    </div>
-                                    <div class="item">
+                                    </div> -->
+                                    <!-- <div class="item">
                                         <span class="show">Sort By :</span>
                                         <select class="select-bar">
                                             <option value="showing">now showing</option>
@@ -370,17 +274,17 @@
                                             <option value="most-view">most view</option>
                                         </select>
                                     </div>
-                                </div>
-                                <ul class="grid-button tab-menu">
+                                </div> -->
+                                <!-- <ul class="grid-button tab-menu">
                                     <li>
                                         <i class="fas fa-th"></i>
                                     </li>                            
                                     <li class="active">
                                         <i class="fas fa-bars"></i>
                                     </li>                            
-                                </ul>
-                            </div>
-                        </div>
+                                </ul> -->
+                            <!-- </div>
+                        </div> -->
                         <div class="tab-area">
                             <div class="tab-item">
                                 <div class="row mb-10 justify-content-center">
@@ -489,7 +393,7 @@
 
 
 
-                        <div class="pagination-area text-center">
+                        <!-- <div class="pagination-area text-center">
                             <a href="#0"><i class="fas fa-angle-double-left"></i><span>Prev</span></a>
                             <a href="#0">1</a>
                             <a href="#0">2</a>
@@ -497,7 +401,7 @@
                             <a href="#0">4</a>
                             <a href="#0">5</a>
                             <a href="#0"><span>Next</span><i class="fas fa-angle-double-right"></i></a>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>

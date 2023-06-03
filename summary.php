@@ -136,6 +136,8 @@ $run = mysqli_query($conn, $select_query);
                     $date_now = date("Y-m-d");
                     $move_date =$row['movie_date'];
                     if ( strtotime($date_now) < strtotime($move_date)  ) {?>
+                        <a href="pdf.php?id=<?php echo $row['id']?>" class = "btn btn-dark d-flex justify-content-center" target="_blank">GENERATE PDF</a>
+
                        <form action="paymentmethod.php" method="post">
                                                     <input type="submit" name="payment_btn" value="proceed">
                                                     <input type="hidden" name="hidden_id" value="<?php echo $row['id']?>">

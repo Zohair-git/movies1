@@ -358,28 +358,24 @@
                                             </ul>
                                             <div class="book-area">
                                                 <div class="book-ticket">
-                                                    <div class="react-item">
+                                                    <!-- <div class="react-item">
                                                         <a href="#0">
                                                             <div class="thumb">
                                                                 <img src="./assets/images/icons/heart.png" alt="icons">
                                                             </div>
                                                         </a>
+                                                    </div> -->
+                                                    <div class="react-item ">
+                                                    <form action="bookticket.php" method="post" class="form-group">
+ <input type="submit" name="bookticket_button" value="Book Ticket Now">
+ <input type="hidden" name="hidden_id1" value="<?php echo $cards['id']?>">
+                                </form>
                                                     </div>
-                                                    <div class="react-item mr-auto">
-                                                        <a href="#0">
-                                                            <div class="thumb">
-                                                                <img src="./assets/images/icons/book.png" alt="icons">
-                                                            </div>
-                                                            <span>book ticket</span>
-                                                        </a>
-                                                    </div>
-                                                    <div class="react-item">
-                                                        <a href="#0" class="popup-video">
-                                                            <div class="thumb">
-                                                                <img src="./assets/images/icons/play-button.png" alt="icons">
-                                                            </div>
-                                                            <span>watch trailer</span>
-                                                        </a>
+                                                    <div class="react-item ">
+                                                    <form action="movie-details.php" method="post" class="form-group">
+ <input type="submit" name="description_button" value="About <?php echo $cards['title']?>">
+ <input type="hidden" name="hidden_id" value="<?php echo $cards['id']?>">
+ </form>
                                                     </div>
                                                 </div>
                                             </div>

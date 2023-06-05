@@ -4,33 +4,28 @@
 session_start();
 include('connection.php');
 if(isset($_POST['ratings'])){
- $star = $_POST['ratings'];
- $_SESSION['star'] = $star;
+    $star = $_POST['ratings'];
+    $_SESSION['star'] = $star;
 }
 if(isset($_POST['store'])){
- $reviews = $_POST['reviews'];
- $email = $_SESSION['email'];
- $name = $_SESSION["name"];
- $pfp = $_SESSION["pfp"];
- $movie_name = $_POST["movie_name"];
- $stars = $_SESSION['star'];
- $insert_query = "INSERT INTO `tbl_user_reviews`(`review`, `rating`, `user_email`, `movie_name`,`Name`,`pfp`)
- VALUES ('$reviews','$stars','$email','$movie_name','$name','$pfp')";
- $insert_query_run = mysqli_query($conn,$insert_query);
- if($insert_query_run){
- echo 1;
- exit();
- }
- }
- if(isset($_POST['checking'])){
-     $checking_id = $_POST['checking'];
-    $_SESSION['checking_id'] = $checking_id;
- }
- $emaill = $_SESSION['email'];
- $checking = $_SESSION['checking_id'];
- $select_query = "SELECT * FROM `tbl_user_reviews` WHERE user_email ='$emaill' AND movie_name = '$checking'";
- $select_query_run = mysqli_query($conn,$select_query);
-
+    $reviews = $_POST['reviews'];
+    $email = $_SESSION['email'];
+    $name = $_SESSION["name"];
+    $pfp = $_SESSION["pfp"];
+    $movie_name = $_POST["movie_name"];
+    $stars = $_SESSION['star'];
+    $insert_query = "INSERT INTO `tbl_user_reviews`(`review`, `rating`, `user_email`, `movie_name`)
+     VALUES ('$reviews','$stars','$email',''";
+    $insert_query_run = mysqli_query($conn,$insert_query);
+    if($insert_query_run){
+        echo 1;
+        exit();
+    }
+    }
+    $emaill = $_SESSION['email'];
+    $select_query = "SELECT * FROM `tbl_user_reviews` WHERE user_email ='$emaill'";
+    $select_query_run = mysqli_query($conn,$select_query);
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">

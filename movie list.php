@@ -68,77 +68,33 @@
     <!-- ==========Banner-Section========== -->
 
     <!-- ==========Ticket-Search========== -->
-    <section class="search-ticket-section padding-top pt-lg-0">
-        <div class="container">
-            <div class="search-tab bg_img" data-background="./assets/images/ticket/ticket-bg01.jpg">
-                <div class="row align-items-center mb--20">
-                    <div class="col-lg-6 mb-20">
-                        <div class="search-ticket-header">
-                            <h6 class="category">welcome to Boleto </h6>
-                            <h3 class="title">what movie are you looking for</h3>
-                        </div>
-                    </div>
-    
-                </div>
-                <div class="tab-area">
-                    <div class="tab-item active">
-                    <form class="ticket-search-form">
-                            <div class="form-group large" style="width:100%">
-                                <input type="text" placeholder="Search for Movies">
-                                <button type="submit"><i class="fas fa-search"></i></button>
-                            </div>
-</form>
-                    </div>
-                    <!-- <div class="tab-item"> -->
-                       
-                            <!-- <div class="form-group">
-                                <div class="thumb">
-                                    <img src="./assets/images/ticket/city.png" alt="ticket">
-                                </div>
-                                <span class="type">city</span>
-                                <select class="select-bar">
-                                    <option value="london">London</option>
-                                    <option value="dhaka">dhaka</option>
-                                    <option value="rosario">rosario</option>
-                                    <option value="madrid">madrid</option>
-                                    <option value="koltaka">kolkata</option>
-                                    <option value="rome">rome</option>
-                                    <option value="khoksa">khoksa</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <div class="thumb">
-                                    <img src="./assets/images/ticket/date.png" alt="ticket">
-                                </div>
-                                <span class="type">date</span>
-                                <select class="select-bar">
-                                    <option value="26-12-19">23/10/2020</option>
-                                    <option value="26-12-19">24/10/2020</option>
-                                    <option value="26-12-19">25/10/2020</option>
-                                    <option value="26-12-19">26/10/2020</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <div class="thumb">
-                                    <img src="./assets/images/ticket/cinema.png" alt="ticket">
-                                </div>
-                                <span class="type">sports</span>
-                                <select class="select-bar">
-                                    <option value="football">football</option>
-                                    <option value="cricket">cricket</option>
-                                    <option value="cabadi">cabadi</option>
-                                    <option value="madrid">madrid</option>
-                                    <option value="gadon">gadon</option>
-                                    <option value="rome">rome</option>
-                                    <option value="khoksa">khoksa</option>
-                                </select>
-                            </div> -->
-                        <!-- </form> -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>    
+    </section>
+ <!-- ==========Banner-Section========== -->
+ <!-- ==========Ticket-Search========== -->
+ <section class="search-ticket-section padding-top pt-lg-0">
+ <div class="container">
+ <div class="search-tab bg_img" data-background="./assets/images/ticket/ticket-bg01.jpg">
+ <div class="row align-items-center mb--20">
+ <div class="col-lg-6 mb-20">
+ <div class="search-ticket-header">
+ <h6 class="category">welcome to Boleto </h6>
+ <h3 class="title">what movie are you looking for</h3>
+ </div>
+ </div>
+ </div>
+ <div class="tab-area" >
+ <div class="tab-item active">
+ <form class="ticket-search-form" method="POST" action="movies.php">
+ <div class="form-group large" style="width:100%;">
+ <input type="search" id="ID_Searchmovies" name="searchword" placeholder="Search for Movies">
+ <button type="submit" name="submit"><i class="fas fa-search"></i></button>
+ </div>
+ </form>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section> 
     <!-- ==========Ticket-Search========== -->
 
     <!-- ==========Movie-Section========== -->

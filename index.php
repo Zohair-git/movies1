@@ -75,17 +75,15 @@ crossorigin="anonymous"></script>
  </div>
  </div>
  </div>
- <div class="tab-area">
+ <div class="tab-area" >
  <div class="tab-item active">
  <form class="ticket-search-form" method="POST" action="movies.php">
- <div class="form-group large"   >
- <input type="text" id="ID_Searchmovies" name="searchword" placeholder="Search for Movies">
- <button type="submit"><i class="fas fa-search"></i></button>
+ <div class="form-group large" style="width:100%;">
+ <input type="search" id="ID_Searchmovies" name="searchword" placeholder="Search for Movies">
+ <button type="submit" name="submit"><i class="fas fa-search"></i></button>
  </div>
  </form>
  </div>
-
-
  </div>
  </div>
  </div>
@@ -197,104 +195,107 @@ crossorigin="anonymous"></script>
  <?php }}?>
  </div>
  </div>
+ </div>
+   
+    <!-- ==========Movie-Main-Section========== -->
 
- </div>
- </div>
- </div>
- </section>
- <!-- ==========Movie-Main-Section========== -->
- <!-- ==========Newslater-Section========== -->
- <footer class="footer-section">
- <div class="container">
- <div class="footer-top">
- <div class="logo">
- <a href="index-1.html">
- <img src="./assets/images/footer/footer-logo.png" alt="footer">
- </a>
- </div>
- <ul class="social-icons">
- <li>
- <a href="#0">
- <i class="fab fa-facebook-f"></i>
- </a>
- </li>
- <li>
- <a href="#0" class="active">
- <i class="fab fa-twitter"></i>
- </a>
- </li>
- <li>
- <a href="#0">
- <i class="fab fa-pinterest-p"></i>
- </a>
- </li>
- <li>
- <a href="#0">
- <i class="fab fa-google"></i>
- </a>
- </li>
- <li>
- <a href="#0">
- <i class="fab fa-instagram"></i>
- </a>
- </li>
- </ul>
- </div>
- <div class="footer-bottom">
- <div class="footer-bottom-area">
- <div class="left">
- <p>Copyright © 2020.All Rights Reserved By <a href="#0">Boleto </a></p>
- </div>
- <ul class="links">
- <li>
- <a href="#0">About</a>
- </li>
- <li>
- <a href="#0">Terms Of Use</a>
- </li>
- <li>
- <a href="#0">Privacy Policy</a>
- </li>
- <li>
- <a href="#0">FAQ</a>
- </li>
- <li>
- <a href="#0">Feedback</a>
- </li>
- </ul>
- </div>
- </div>
- </div>
- </footer>
- <!-- ==========Newslater-Section========== -->
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
- <script src="assets/js/jquery-3.3.1.min.js"></script>
- <script src="assets/js/modernizr-3.6.0.min.js"></script>
- <script src="assets/js/plugins.js"></script>
- <script src="assets/js/bootstrap.min.js"></script>
- <script src="assets/js/heandline.js"></script>
- <script src="assets/js/isotope.pkgd.min.js"></script>
- <script src="assets/js/magnific-popup.min.js"></script>
- <script src="assets/js/owl.carousel.min.js"></script>
- <script src="assets/js/wow.min.js"></script>
- <script src="assets/js/countdown.min.js"></script>
- <script src="assets/js/odometer.min.js"></script>
- <script src="assets/js/viewport.jquery.js"></script>
- <script src="assets/js/nice-select.js"></script>
- <script src="assets/js/main.js"></script>
- <script>
- $(document).ready(function(){
- dataLoad();
- function dataLoad(){
- $.ajax({
- url: 'storereviews.php',
- type: 'POST',
- success: function(data) {
- $('#ID_div').html(data);
- }
- })
- }
- })
- </script>
+    <!-- ==========Newslater-Section========== -->
+            <footer class="footer-section">
+
+        <div class="container">
+            <div class="footer-top">
+                <div class="logo">
+                    <a href="index-1.html">
+                        <img src="./assets/images/footer/footer-logo.png" alt="footer">
+                    </a>
+                </div>
+                <ul class="social-icons">
+                    <li>
+                        <a href="#0">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#0" class="active">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#0">
+                            <i class="fab fa-pinterest-p"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#0">
+                            <i class="fab fa-google"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#0">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-bottom-area">
+                    <div class="left">
+                        <p>Copyright © 2020.All Rights Reserved By <a href="#0">Boleto </a></p>
+                    </div>
+                    <ul class="links">
+                        <li>
+                            <a href="#0">About</a>
+                        </li>
+                        <li>
+                            <a href="#0">Terms Of Use</a>
+                        </li>
+                        <li>
+                            <a href="#0">Privacy Policy</a>
+                        </li>
+                        <li>
+                            <a href="#0">FAQ</a>
+                        </li>
+                        <li>
+                            <a href="#0">Feedback</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==========Newslater-Section========== -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/modernizr-3.6.0.min.js"></script>
+    <script src="assets/js/plugins.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/heandline.js"></script>
+    <script src="assets/js/isotope.pkgd.min.js"></script>
+    <script src="assets/js/magnific-popup.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/countdown.min.js"></script>
+    <script src="assets/js/odometer.min.js"></script>
+    <script src="assets/js/viewport.jquery.js"></script>
+    <script src="assets/js/nice-select.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        $(document).ready(function(){
+            dataLoad();
+            function dataLoad(){
+            $.ajax({
+                url: 'storereviews.php',
+                type: 'POST',
+                success: function(data) {
+                    $('#ID_div').html(data);
+                }
+            })
+        }
+        })
+
+    </script>
 </body>
 </html>

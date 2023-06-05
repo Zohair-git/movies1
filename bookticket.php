@@ -102,8 +102,8 @@ session_start();
   </div><br> -->
   <div class="mb-3">
     <label  class="form-label">Total Members</label>
-    <input type="number" name="Adults" placeholder="Adults" class="form-control mb-2 bg-transparent" style="border:0px; border-bottom:2px solid white;" >
-    <input type="number" name="Childrens" placeholder="Childrens" class="form-control bg-transparent" style="border:0px; border-bottom:2px solid white;" >
+    <input type="number" min="1" name="Adults" placeholder="Adults" class="form-control mb-2 bg-transparent" style="border:0px; border-bottom:2px solid white;" >
+    <input type="number" min="1" name="Childrens" placeholder="Childrens" class="form-control bg-transparent" style="border:0px; border-bottom:2px solid white;" >
   </div><br>
   <div class="mb-3">
   <label  class="form-label">Ticket Class</label>
@@ -127,30 +127,19 @@ session_start();
     <div class="form-group col-lg-3">
     <input type="submit" name="submit_ticket" value="Book a ticket" >
   
-    </div>
+  </div>
+  
+    <?php }?>
+  </form>
     <div class="form-group col-lg-6">
+      <form action="index.php">
     <input type="submit"  name="submit" value="BACK TO HOME">
+    </form>
     </div>
 </div>
-
-  <?php }?>
-</form>
 
 </div>
 <br><br><br><br>
-<!-- <script src="assets/js/jquery-3.3.1.min.js"></script>
-    <script src="assets/js/modernizr-3.6.0.min.js"></script>
-    <script src="assets/js/plugins.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/heandline.js"></script>
-    <script src="assets/js/isotope.pkgd.min.js"></script>
-    <script src="assets/js/magnific-popup.min.js"></script>
-    <script src="assets/js/owl.carousel.min.js"></script>
-    <script src="assets/js/wow.min.js"></script>
-    <script src="assets/js/countdown.min.js"></script>
-    <script src="assets/js/odometer.min.js"></script>
-    <script src="assets/js/viewport.jquery.js"></script>
-    <script src="assets/js/nice-select.js"></script>
-    <script src="assets/js/main.js"></script> -->
+
 </body>
 </html>

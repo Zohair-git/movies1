@@ -138,7 +138,7 @@ session_start();
 
 </div>
 <br><br><br><br>
-<script src="assets/js/jquery-3.3.1.min.js"></script>
+<!-- <script src="assets/js/jquery-3.3.1.min.js"></script>
     <script src="assets/js/modernizr-3.6.0.min.js"></script>
     <script src="assets/js/plugins.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
@@ -151,6 +151,6 @@ session_start();
     <script src="assets/js/odometer.min.js"></script>
     <script src="assets/js/viewport.jquery.js"></script>
     <script src="assets/js/nice-select.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js"></script> -->
 </body>
 </html>

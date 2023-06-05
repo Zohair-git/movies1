@@ -1,10 +1,4 @@
 <?php
- session_start();
-
-
-
-
-
 use Dompdf\Dompdf;
 
  include('connection.php');
@@ -17,6 +11,17 @@ require_once('./vendor/autoload.php');
      $run = mysqli_query($conn, $s_query);
      $fetch = mysqli_fetch_array($run);
      
+     if ($fetch['seat_categories'] == 'Plat Class') {
+      $child = $fetch['childrens'] * 2400;
+     $adults = $fetch['Adults'] * 3000;
+     $total_a = $child + $adults;
+    
+    }else {
+      $child = $fetch['childrens'] * 2000;
+      $adults = $fetch['Adults'] * 2500;
+      $total_a = $child + $adults;
+    
+    } 
  
  
 
@@ -104,8 +109,8 @@ thead{
   <tbody>
 
   <tr>
-  <td>'. $$fetch['childrens'] .'</td>
-  <td>'. $$fetch['Adults'] .'</td>
+  <td>'. $fetch['childrens'] .'</td>
+  <td>'. $fetch['Adults'] .'</td>
   
 
 </tr>
@@ -124,8 +129,8 @@ thead{
 <tbody>
 
 <tr>
-<td>'. $fetch['seat_categories '] .'</td>
-<td>'. $fetch['seat_categories '] .'</td>
+<td>'. $fetch['seat_categories'] .'</td>
+<td>'. $total_a .'</td>
 
 
 </tr>
@@ -137,7 +142,7 @@ thead{
 
 
 
-<h3>Vaccinated</h3>
+<h3>Booked</h3>
 <p>Movie Name  :'. $fetch['movie_name'] .'</p>
 <p>Date  :'. $fetch['movie_date'] .'</p>
 <p>Time :'. $fetch['movie_time'] .'</p>

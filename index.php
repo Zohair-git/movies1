@@ -172,7 +172,7 @@ crossorigin="anonymous"></script>
  </div>
  <div class="col-lg-6">
  <p>Plat Seats</p>
- <p><?php echo $row['Gold_seats']?></p>
+ <p><?php echo $row['Platinum_seats']?></p>
  </div>
  </div>
  <br>

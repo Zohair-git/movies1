@@ -2,7 +2,7 @@
 session_start();
 include('connection.php');
 $id = $_SESSION['id'];
-$select_query = "SELECT * FROM `tbl_ticket` WHERE user_id = $id";
+$select_query = "SELECT * FROM `tbl_ticket` WHERE user_id = '$id' ORDER BY id DESC";
 $run = mysqli_query($conn, $select_query);
 
 
